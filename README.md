@@ -1,29 +1,55 @@
-# Astro Starter Kit: Minimal
+# Paulo Mendes - Personal Blog
 
-```sh
-npm create astro@latest -- --template minimal
-```
+A personal blog built with Astro, featuring an Xcode Dark theme and optimized for sharing iOS development insights.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Features
+
+- Xcode Dark theme styling
+- Markdown support with syntax highlighting for Swift
+- Responsive layout inspired by steipete.me
+- Content collections for blog posts
+- Netlify-ready deployment
 
 ## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
 
 ```text
 /
 ├── public/
 ├── src/
-│   └── pages/
-│       └── index.astro
+│   ├── components/
+│   │   ├── Header.astro
+│   │   └── Hero.astro
+│   ├── content/
+│   │   ├── blog/
+│   │   │   └── hello-world.md
+│   │   └── config.ts
+│   ├── layouts/
+│   │   ├── BaseLayout.astro
+│   │   └── BlogPost.astro
+│   ├── pages/
+│   │   ├── blog/
+│   │   │   └── [...slug].astro
+│   │   └── index.astro
+│   └── styles/
+│       └── global.css
+├── netlify.toml
 └── package.json
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Adding New Blog Posts
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+Create a new `.md` file in `src/content/blog/` with the following frontmatter:
 
-Any static assets, like images, can be placed in the `public/` directory.
+```markdown
+---
+title: 'Your Post Title'
+description: 'A brief description of your post'
+pubDate: 2025-11-25
+readTime: '5 min read'
+---
+
+Your content here...
+```
 
 ## 🧞 Commands
 
@@ -38,6 +64,31 @@ All commands are run from the root of the project, from a terminal:
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
 
+## Deploying to Netlify
+
+1. Push your code to a Git repository (GitHub, GitLab, or Bitbucket)
+2. Log in to [Netlify](https://netlify.com)
+3. Click "Add new site" and import your repository
+4. Netlify will automatically detect the build settings from `netlify.toml`
+5. Configure your custom domain `paulomendes.me` in the Netlify dashboard under Domain settings
+
+The `netlify.toml` file is already configured with the correct build command and publish directory.
+
+## Customization
+
+### Update Bio and Avatar
+
+Edit `src/components/Hero.astro` to update your bio text and avatar placeholder.
+
+### Change Theme Colors
+
+The Xcode Dark theme colors are defined in `src/styles/global.css`:
+
+- `--color-keyword`: Title color (pink)
+- `--color-variable`: Link color (teal)
+- `--color-variable-hover`: Link hover color (lighter teal)
+- `--color-text`: Plain text color (white)
+
 ## 👀 Want to learn more?
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Feel free to check [Astro documentation](https://docs.astro.build) or join the [Discord server](https://astro.build/chat).

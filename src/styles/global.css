@@ -1,0 +1,145 @@
+/* Import Fira Code font from CDN */
+@font-face {
+  font-family: 'Fira Code';
+  src: url('https://cdn.jsdelivr.net/npm/fira-code@6.2.0/distr/woff2/FiraCode-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Fira Code';
+  src: url('https://cdn.jsdelivr.net/npm/fira-code@6.2.0/distr/woff2/FiraCode-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Fira Code';
+  src: url('https://cdn.jsdelivr.net/npm/fira-code@6.2.0/distr/woff2/FiraCode-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Xcode Dark Theme Colors */
+:root {
+  --color-bg: #1f1f24;
+  --color-text: #ffffff;
+  --color-keyword: #fc5fa3;
+  --color-variable: #67b7a4;
+  --color-variable-hover: #8dd0bf;
+  --color-secondary: #a0a0a0;
+  --color-border: #2d2d30;
+  --font-mono: 'Fira Code', ui-monospace, 'SF Mono', Monaco, 'Menlo', 'Consolas', 'Courier New', monospace;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-mono);
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-keyword);
+  line-height: 1.3;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+a {
+  color: var(--color-variable);
+  text-decoration: none;
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  border-bottom: 3px dotted var(--color-variable);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.2s ease;
+}
+
+a:hover {
+  color: var(--color-variable-hover);
+}
+
+a:hover::after {
+  transform: scaleX(1);
+  border-bottom-color: var(--color-variable-hover);
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+code {
+  font-family: var(--font-mono);
+  background-color: #2d2d30;
+  padding: 0.2rem 0.4rem;
+  border-radius: 3px;
+  font-size: 0.9em;
+  font-variant-ligatures: normal;
+}
+
+pre {
+  font-family: var(--font-mono);
+  background-color: #2d2d30;
+  padding: 1.5rem;
+  border-radius: 6px;
+  overflow-x: auto;
+  margin-bottom: 1.5rem;
+  font-variant-ligatures: normal;
+}
+
+pre code {
+  background-color: transparent;
+  padding: 0;
+}
+
+ul, ol {
+  margin-bottom: 1rem;
+  padding-left: 2rem;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+
+blockquote {
+  border-left: 3px solid var(--color-keyword);
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+  color: var(--color-secondary);
+}
